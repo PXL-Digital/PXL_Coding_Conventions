@@ -123,8 +123,4 @@ int level, size;
 
 [1] [Java Coding Conventions](http://www.oracle.com/technetwork/java/codeconventions-150003.pdf)
 
-[2] [Clean Code: A Handbook of Agile Software Craftsmanship](https://github.com/apoterenko/software-development-ebooks/blob/master/%5BClean%20Code%20A%20Handbook%20of%20Agile%20Software%20Craftsmanship%20Kindle%20Edition%20by%20Robert%20C.%20Martin%20-%202009%5D.pdf)
-
-[3] [Github repo](https://github.com/wgroeneveld/cleancode-course)
-
-[4] [Slides](http://www.prato-services.eu/cleancode/index.html#/)
+[2] R. C. Martin, "Clean Code: A Handbook of Agile Software Craftsmanship," Prentice Hall, 2008.
