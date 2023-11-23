@@ -32,7 +32,13 @@ public void drawLogo(int xPosition, int yPosition) {
 ```
 
 
-### CC-03 Gebruik Camel Casing voor variabelen en methode parameterspublic void drawLogo(int xPosition, int yPosition) {     Color randomColor = ...; } 
+### CC-03 Gebruik Camel Casing voor variabelen en methode parameters
+
+```java
+public void drawLogo(int xPosition, int yPosition) {     
+    Color randomColor = ...;
+}
+``` 
 
 ### CC-04 Gebruik geen Hongaarse notatie om variabelen te benoemen
 
@@ -59,7 +65,16 @@ String addr;
 int sal; 
 ```
 
-### CC-06 Gebruik geen variabelenamen die bestaan uit één karakterGeen i, n, s enz. Maar wel index, temp, enz. Een uitzondering kan voor lusvariabelen: for (int i = 0; i < count; i++) {   ... } 
+### CC-06 Gebruik geen variabelenamen die bestaan uit één karakter
+
+Geen i, n, s enz. Maar wel index, temp, enz. 
+Een uitzondering kan voor lusvariabelen: 
+
+```java
+for (int i = 0; i < count; i++) {
+    // CODE COMES HERE
+} 
+```
 
 
 ### CC-07 Gebruik hoofdletters en _ als scheidingsteken tussen woorden voor constantevariabelen
@@ -106,7 +121,10 @@ int level, size;
 
  ## Referenties
 
-  [1] [Java Coding Conventions](http://www.oracle.com/technetwork/java/codeconventions-150003.pdf)
-  [2] [Clean Code: A Handbook of Agile Software Craftsmanship](https://github.com/apoterenko/software-development-ebooks/blob/master/%5BClean%20Code%20A%20Handbook%20of%20Agile%20Software%20Craftsmanship%20Kindle%20Edition%20by%20Robert%20C.%20Martin%20-%202009%5D.pdf)
-  [3] [Github repo](https://github.com/wgroeneveld/cleancode-course)
-  [4] [Slides](http://www.prato-services.eu/cleancode/index.html#/)
+[1] [Java Coding Conventions](http://www.oracle.com/technetwork/java/codeconventions-150003.pdf)
+
+[2] [Clean Code: A Handbook of Agile Software Craftsmanship](https://github.com/apoterenko/software-development-ebooks/blob/master/%5BClean%20Code%20A%20Handbook%20of%20Agile%20Software%20Craftsmanship%20Kindle%20Edition%20by%20Robert%20C.%20Martin%20-%202009%5D.pdf)
+
+[3] [Github repo](https://github.com/wgroeneveld/cleancode-course)
+
+[4] [Slides](http://www.prato-services.eu/cleancode/index.html#/)
