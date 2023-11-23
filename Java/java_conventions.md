@@ -10,7 +10,7 @@ Programmeren volgens strikte richtlijnen heeft een aantal voordelen:
 ## Definities
 
 | Definitie      | Beschrijving | Voorbeeld |
-| :---        |    :----:   |    ----:   |
+| ---        |    ----  |    ----  |
 | Pascal Casing | De eerste letter van elk woord is met een hoofdletter geschreven en andere letters staan in kleine letters. | NewBachelorStudent |
 | Camel Casing   | De eerste letter van elk woord, behalve het eerste woord, is met een hoofdletter geschreven en andere letters staan in kleine letters. | newBachelorStudent |
 
