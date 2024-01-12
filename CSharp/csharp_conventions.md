@@ -90,15 +90,37 @@ public class Person
 
 ### CC-07 Gebruik betekenisvolle namen voor klassen, methoden en variabelen.
 
+Een naam van een variabele, methode of klasse moet iets vertellen over diens 
+bestaansreden. Als een naam commentaar vereist, onthult de naam de bedoeling 
+ervan niet.
+
+Niet:
+
 ```csharp
-string address; 
-int salary;
+int d; // elapsed time in days
 ```
 
-Gebruik zeker geen afkortingen, zoals: 
+Wel:
+
+```csharp
+int elapsedTimeInDays;
+```
+
+Gebruik ook geen afkortingen, zelfs als die duidelijk zouden zijn
+voor de lezer:
+
+Niet:
+
 ```csharp
 string addr; 
 int sal; 
+```
+
+Wel:
+
+```csharp
+string address; 
+int salary;
 ```
 
 ### CC-08 Gebruik geen variabelenamen die bestaan uit één karakter
