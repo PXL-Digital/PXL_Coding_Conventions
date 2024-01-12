@@ -60,7 +60,7 @@ public interface IColoredBalloon
 
 ### CC-05 Gebruik geen Hongaarse notatie om variabelen te benoemen
 
- Vroeger was het de gewoonte om een variabele benoemen met een prefix waaruit het type 
+ Vroeger was het de gewoonte om een variabele te benoemen met een prefix waaruit het type 
  duidelijk wordt. Soms gebruikt men ook een prefix m_ om aan te geven dat het om een 
  instantievariabele (member) gaat. Ook dit is niet toegelaten. 
 
