@@ -78,8 +78,8 @@ onderscheid maken met methodeparameters en lokale variabelen die dezelfde naam h
 ```csharp
 public class Person
 {
-	private int _age; // not allowed: age or m_age
-	...
+    private int _age; // not allowed: age or m_age
+    ...
 
     public Person(int age)
     {
