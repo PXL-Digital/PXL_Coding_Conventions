@@ -49,7 +49,7 @@ public void DrawLogo(int xPosition, int yPosition)
 }
 ``` 
 
-### CC-04 Gebruik de letter `I` als prefix voor interfaces, samen met Camel Casing
+### CC-04 Gebruik de letter `I` als prefix voor interfaces, samen met Pascal Casing
 
 ```csharp
 public interface IColoredBalloon
@@ -72,11 +72,19 @@ public interface IColoredBalloon
 
 ### CC-06 Instantievariabelen prefixen met underscore `_`
 
+Door instantievariabelen te prefixen met een underscore `_` kan je een duidelijk
+onderscheid maken met methodeparameters en lokale variabelen die dezelfde naam hebben.
+
 ```csharp
 public class Person
 {
-	private int _age; // not ok: age or m_age
+	private int _age; // not allowed: age or m_age
 	...
+
+    public Person(int age)
+    {
+        _age = age;
+    }
 }
 ```
 
@@ -95,7 +103,7 @@ int sal;
 
 ### CC-08 Gebruik geen variabelenamen die bestaan uit één karakter
 
-Geen `i`, `n`, `s` enz. Maar wel `index`, `temp`, enz. 
+Geen `i`, `n`, `c` enz. Maar wel `index`, `numbers`, `count` enz. 
 Een uitzondering kan voor lusvariabelen: 
 
 ```csharp
@@ -117,8 +125,8 @@ In XAML:
 <Button x:Name="cancelButton" ...></Button>
 ```
 
-Wanneer de door Visual Studio gegenereerde code in conflict is met de regels van 
-methodenamen, hoef je dat niet te veranderen, bijvoorbeeld:
+Wanneer code die Visual Studio genereert in conflict is met de regels van 
+methodenamen, hoef je dat niet te veranderen. Bijvoorbeeld:
 
 In XAML:
 ```xml
@@ -154,7 +162,7 @@ public const string PRODUCT_NAME = "Visual Studio";
 public const string versionNumber = "17.0b2";
 ```
  
- ### CC-12 Plaats accolades { } na en onder het statement, netjes uitgelijnd
+ ### CC-12 Plaats accolades { } na en onder het statement, netjes uitgelijnd.
 
 ```csharp
 if (_filled)
@@ -190,6 +198,6 @@ int level, size;
 
 ## Referenties
 
-[1] [C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
+[1] [Common C# Coding Conventions (Microsoft)](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
 
-[2] [General naming conventions by Microsoft](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/general-naming-conventions)
+[2] [General naming conventions (Microsoft)](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/general-naming-conventions)
