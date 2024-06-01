@@ -126,6 +126,7 @@ int salary;
 ### CC-08 Gebruik geen variabelenamen die bestaan uit één karakter
 
 Geen `i`, `n`, `c` enz. Maar wel `index`, `numbers`, `count` enz. 
+
 Een uitzondering kan voor lusvariabelen: 
 
 ```csharp
@@ -133,6 +134,12 @@ for (int i = 0; i < count; i++)
 {
     // CODE COMES HERE
 } 
+```
+
+Een uitzondering kan voor parameters in lambda-expressies: 
+
+```csharp
+var evenNumbers = numbers.Where(n => n % 2 == 0);
 ```
 
 ### CC-09 Instanties van User Interface (UI) componenten benoem je door een betekenisvolle naam, gevolgd door de klassenaam van de betreffende component.
