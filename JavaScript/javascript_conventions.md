@@ -124,7 +124,9 @@ Wanneer opnieuw gekeken wordt naar `Format Document With...`, zal `ESLint` nu de
 
 Zie je de optie niet? Herstart Visual Studio Code.
 
-Bevestigen dat het werkt. Maak een nieuwe JavaScript-file aan en schrijf een stukje code dat niet voldoet aan de style guide.
+### Bevestig werking
+
+Bevestigen dat het werkt. Maak een nieuwe JavaScript-file aan in de NPM-directory waar ook de `.eslintrc.json`-file aanwezig is. Schrijf een stukje code dat niet voldoet aan de style guide.
 
 <code>
   <pre>
@@ -134,7 +136,10 @@ function testFunction()
 }</pre>
 </code>
 
-Er worden nu rode lijnen getoond in de editor. Wanneer je hier over gaat met de muis, dan krijg je informatie over welke regel niet voldoet aan de style guide.
+Er worden nu lijnen getoond in de editor. Wanneer je hier over gaat met de muis, dan krijg je informatie over welke regel niet voldoet aan de style guide.
+
+Merk op: afhankelijk van het actieve thema kunnen de kleuren verschillen.
+Merk op: afhankelijk van de IDE kan de pop-up er anders uitzien.
 
 ![ESLint error](./images/eslint-vscode-red.png)
 ![ESLint error brace style](./images/eslint-vscode-brace-style.png)
@@ -143,7 +148,7 @@ Er worden nu rode lijnen getoond in de editor. Wanneer je hier over gaat met de 
 ![ESLint error no unused var](./images/eslint-vscode-no-unused-var.png)
 ![ESLint error trailing space](./images/eslint-vscode-trailing-space.png)
 
-Wanneer `Format on Save` is aangevinkt, dan zal de code automatisch aangepast worden wanneer je de file opslaat.
+Wanneer het formatteren bij opslaan is ingeschakeld, dan zal de code automatisch aangepast worden wanneer je de file opslaat.
 
 ![ESLint fixed](./images/eslint-vscode-save.png)
 
