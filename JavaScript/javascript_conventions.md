@@ -15,141 +15,177 @@ Engels als voertaal in je broncode. Dit betekent dat je alle benamingen (van
 klassen, variabelen, methodes, properties, enz.) en ook je commentaar in je
 code in het Engels schrijft.
 
+## Definities
+
+| Definitie        | Beschrijving                                                                                                                           | Voorbeeld            |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
+| Pascal Casing    | De eerste letter van elk woord is met een hoofdletter geschreven en andere letters staan in kleine letters.                            | `NewBachelorStudent` |
+| Camel Casing     | De eerste letter van elk woord, behalve het eerste woord, is met een hoofdletter geschreven en andere letters staan in kleine letters. | `newBachelorStudent` |
+| Upper Snake Case | Alle letters zijn in hoofdletters geschreven en woorden worden gescheiden door een underscore.                                         | `MAX_STUDENTS`       |
+
 ## Conventies
 
 Om consistentie in de code te garanderen, volgen we de [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). Gebruik deze style guide als referentie voor het schrijven van JavaScript-code.
 
-1. [Types](https://github.com/airbnb/javascript#types)
-1. [References](https://github.com/airbnb/javascript#references)
-1. [Objects](https://github.com/airbnb/javascript#objects)
-1. [Arrays](https://github.com/airbnb/javascript#arrays)
-1. [Destructuring](https://github.com/airbnb/javascript#destructuring)
-1. [Strings](https://github.com/airbnb/javascript#strings)
-1. [Functions](https://github.com/airbnb/javascript#functions)
-1. [Arrow Functions](https://github.com/airbnb/javascript#arrow-functions)
-1. [Classes & Constructors](https://github.com/airbnb/javascript#classes--constructors)
-1. [Modules](https://github.com/airbnb/javascript#modules)
-1. [Iterators and Generators](https://github.com/airbnb/javascript#iterators-and-generators)
-1. [Properties](https://github.com/airbnb/javascript#properties)
-1. [Variables](https://github.com/airbnb/javascript#variables)
-1. [Hoisting](https://github.com/airbnb/javascript#hoisting)
-1. [Comparison Operators & Equality](https://github.com/airbnb/javascript#comparison-operators--equality)
-1. [Blocks](https://github.com/airbnb/javascript#blocks)
-1. [Control Statements](https://github.com/airbnb/javascript#control-statements)
-1. [Comments](https://github.com/airbnb/javascript#comments)
-1. [Whitespace](https://github.com/airbnb/javascript#whitespace)
-1. [Commas](https://github.com/airbnb/javascript#commas)
-1. [Semicolons](https://github.com/airbnb/javascript#semicolons)
-1. [Type Casting & Coercion](https://github.com/airbnb/javascript#type-casting--coercion)
-1. [Naming Conventions](https://github.com/airbnb/javascript#naming-conventions)
-1. [Accessors](https://github.com/airbnb/javascript#accessors)
-1. [Events](https://github.com/airbnb/javascript#events)
+Deze conventies kunnen automatisch gecontroleerd worden, zie [Configuratie IDE](./configuratie_ide.md).
 
-## Configuratie IDE
+De belangrijkste conventies staan hieronder opgesomd. Twijfel je over een bepaalde conventie, raadpleeg dan de volledige [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript).
 
-We gebruiken [ESLint](https://eslint.org/) om de code te controleren op fouten en om de code te formatteren. De configuratie van ESLint is gebaseerd op de style guide.
+### Gebruik Camel Casing voor variabelen, functies en instanties
 
-### ESLint-configuratie
-
-Indien je nog geen NPM-project hebt, maak dan een nieuw project aan.
-
-```sh
-npm init -y
+```javascript
+const bachelorStudent = {};
+function drawLogo() {}
 ```
 
-Installeer ESLint met de Airbnb Style Guide-regels.
+Uitzondering: Upper Snake Case voor globale constanten.
 
-```sh
-npx install-peerdeps --dev eslint-config-airbnb-base
+```javascript
+const MAX_STUDENTS = 30;
 ```
 
-Dit zal de volgende packages installeren:
+### Gebruik Pascal Casing voor klassen en constructors
 
-- `eslint`
-- `eslint-config-airbnb-base`
-- `eslint-plugin-import`
+```javascript
+class BachelorStudent {
+  constructor() {}
+}
 
-Maak een `.eslintrc.json`-bestand aan in de root van je project.
+const newBachelorStudent = new BachelorStudent();
+```
 
-```json
-{
-  "extends": "airbnb-base"
+### Gebruik betekenisvolle namen
+
+```javascript
+const width = 10;
+const height = 20;
+const area = width * height;
+
+function calculateArea(width, height) {
+  return width * height;
 }
 ```
 
-Let op: indien je gebruik maakt van Git, voeg dan een `.gitignore`-bestand toe in de root van je project om de `node_modules`-map te negeren.
+en **NIET**:
 
-```sh
-node_modules/
+```javascript
+// niet doen
+const x = 10;
+const y = 20;
+const z = x * y;
+
+function q(w, h) {
+  return w * h;
+}
 ```
 
-### Webstorm
+Uitzondering: Gebruik korte namen voor tellers in loops.
 
-Webstorm heeft een ingebouwde ESLint-plugin.
+```javascript
+for (let i = 0; i < 10; i++) {
+  // CODE COMES HERE
+}
+```
 
-Ga naar `Help` > `Find Action...` en zoek naar `Actions on Save`.
+Uitzondering: Gebruiker korte namen in lambda functies.
 
-![Actions on Save](./images/find-action.png)
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const evenNumbers = numbers.filter((n) => n % 2 === 0);
+```
 
-Vink `Run eslint --fix` aan.
+### Plaats accolades op dezelfde regel
 
-![Run eslint --fix](./images/run-eslint.png)
+```javascript
+function drawLogo() {
+  // CODE COMES HERE
+}
+```
 
-### Visual Studio Code
+In andere programmeertalen, zoals C#, worden accolades vaak op een nieuwe regel geplaatst. In JavaScript is het gebruikelijk om accolades op dezelfde regel te plaatsen.
 
-Installeer de [ESLint-plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) in Visual Studio Code.
+### Gebruik `const` en `let` in plaats van `var`
 
-Ga naar `Help` > `Show all commands` en zoek naar `Settings`.
-![Show all commands](./images/show-all-commands.png)
+```javascript
+const width = 10;
+let height;
+height = 20;
+```
 
-Klik `Preferences: Open Settings (UI)` aan om de settings te openen.
-![Open Settings](./images/settings-ui.png)
+en **NIET**:
 
-Zoek hier naar `eslint` en vink `Enables ESLint as a formatter` aan.
+```javascript
+var width = 10;
+var height;
+height = 20;
+```
 
-![ESLint formatter](./images/eslint-formatter.png)
+> Waarom? `const` en `let` zijn block-scoped, terwijl `var` function-scoped is.
 
-Zoek hier naar `format on save` en vink `Format On Save` aan.
+### Gebruik `===` in plaats van `==`
 
-![Format on save](./images/format-on-save.png)
+Gebruik altijd `===` in plaats van `==` en `!==` in plaats van `!=`.
 
-ESLint aanduiden als default formatter.
+```javascript
+if (age === 10) {
+  // CODE COMES HERE
+}
 
-Ga naar `Help` > `Show all commands` en zoek naar `Format Document`, selecteer `Format Document With...` en kies `Configure Default Formatter...`, kies vervolgens `ESLint`.
+if (age !== 10) {
+  // CODE COMES HERE
+}
+```
 
-Wanneer opnieuw gekeken wordt naar `Format Document With...`, zal `ESLint` nu de default formatter zijn.
+```javascript
+if (age == 10) {
+  // CODE COMES HERE
+}
 
-![Format Document With](./images/format-document-with.png)
-![ESLint](./images/eslint.png)
+if (age != 10) {
+  // CODE COMES HERE
+}
+```
 
-Zie je de optie niet? Herstart Visual Studio Code.
+> Waarom? `===` en `!==` vergelijken de waarde en het type, terwijl `==` en `!=` alleen de waarde vergelijken.
 
-### Bevestig werking
+### Gebruik een aparte lijn per declaratie voor variabelen
 
-Bevestigen dat het werkt. Maak een nieuwe JavaScript-file aan in de NPM-directory waar ook de `.eslintrc.json`-file aanwezig is. Schrijf een stukje code dat niet voldoet aan de style guide.
+```javascript
+let level;
+let size;
+```
 
-<code>
-  <pre>
-function testFunction() 
-{
-        console.log('test');
-}</pre>
-</code>
+en **NIET**:
 
-Er worden nu lijnen getoond in de editor. Wanneer je hier over gaat met de muis, dan krijg je informatie over welke regel niet voldoet aan de style guide.
+```javascript
+let level, size;
+```
 
-Merk op: afhankelijk van het actieve thema kunnen de kleuren verschillen.
-Merk op: afhankelijk van de IDE kan de pop-up er anders uitzien.
+## Referenties
 
-![ESLint error](./images/eslint-vscode-red.png)
-![ESLint error brace style](./images/eslint-vscode-brace-style.png)
-![ESLint error indentation](./images/eslint-vscode-indentation.png)
-![ESLint error no console](./images/eslint-vscode-no-console.png)
-![ESLint error no unused var](./images/eslint-vscode-no-unused-var.png)
-![ESLint error trailing space](./images/eslint-vscode-trailing-space.png)
-
-Wanneer het formatteren bij opslaan is ingeschakeld, dan zal de code automatisch aangepast worden wanneer je de file opslaat.
-
-![ESLint fixed](./images/eslint-vscode-save.png)
-
-Merk op dat de functie nog altijd ongebruikt is. En dat de console.log nog altijd in de code staat. Veel wordt automatisch opgelost, maar niet alles.
+1. [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+   1. [Types](https://github.com/airbnb/javascript#types)
+   1. [References](https://github.com/airbnb/javascript#references)
+   1. [Objects](https://github.com/airbnb/javascript#objects)
+   1. [Arrays](https://github.com/airbnb/javascript#arrays)
+   1. [Destructuring](https://github.com/airbnb/javascript#destructuring)
+   1. [Strings](https://github.com/airbnb/javascript#strings)
+   1. [Functions](https://github.com/airbnb/javascript#functions)
+   1. [Arrow Functions](https://github.com/airbnb/javascript#arrow-functions)
+   1. [Classes & Constructors](https://github.com/airbnb/javascript#classes--constructors)
+   1. [Modules](https://github.com/airbnb/javascript#modules)
+   1. [Iterators and Generators](https://github.com/airbnb/javascript#iterators-and-generators)
+   1. [Properties](https://github.com/airbnb/javascript#properties)
+   1. [Variables](https://github.com/airbnb/javascript#variables)
+   1. [Hoisting](https://github.com/airbnb/javascript#hoisting)
+   1. [Comparison Operators & Equality](https://github.com/airbnb/javascript#comparison-operators--equality)
+   1. [Blocks](https://github.com/airbnb/javascript#blocks)
+   1. [Control Statements](https://github.com/airbnb/javascript#control-statements)
+   1. [Comments](https://github.com/airbnb/javascript#comments)
+   1. [Whitespace](https://github.com/airbnb/javascript#whitespace)
+   1. [Commas](https://github.com/airbnb/javascript#commas)
+   1. [Semicolons](https://github.com/airbnb/javascript#semicolons)
+   1. [Type Casting & Coercion](https://github.com/airbnb/javascript#type-casting--coercion)
+   1. [Naming Conventions](https://github.com/airbnb/javascript#naming-conventions)
+   1. [Accessors](https://github.com/airbnb/javascript#accessors)
+   1. [Events](https://github.com/airbnb/javascript#events)
