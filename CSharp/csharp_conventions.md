@@ -34,7 +34,7 @@ public class BachelorStudent
 ### CC-02 Gebruik Pascal Casing voor methodenamen
 
 ```csharp
-public void DrawLogo(int xPosition, int yPosition)
+public void EnrollInCourse(string courseName, int credits)
 {
 	// CODE COMES HERE
 } 
@@ -43,18 +43,19 @@ public void DrawLogo(int xPosition, int yPosition)
 ### CC-03 Gebruik Camel Casing voor variabelen en methodeparameters
 
 ```csharp
-public void DrawLogo(int xPosition, int yPosition)
+public void EnrollInCourse(string courseName, int credits)
 {
-    Color randomColor = ...;
+	int totalCredits = credits + GetCurrentCredits();
+	// ...
 }
 ``` 
 
 ### CC-04 Gebruik de letter `I` als prefix voor interfaces, samen met Pascal Casing
 
 ```csharp
-public interface IColoredBalloon
+public interface IEnrollable
 {
-    ...
+    void EnrollInCourse(string courseName, int credits);
 }
 ```
 
