@@ -169,3 +169,5 @@ void calculateTest1() {
 [1] [Java Coding Conventions](http://www.oracle.com/technetwork/java/codeconventions-150003.pdf)
 
 [2] R. C. Martin, "Clean Code: A Handbook of Agile Software Craftsmanship," Prentice Hall, 2008.
+
+[3] [Google's Java Coding Conventions Guideline](https://google.github.io/styleguide/javaguide.html)
